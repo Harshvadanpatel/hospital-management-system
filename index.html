@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+    </header>
+    <main>
+        <div class="container">
+            <section class="login-section">
+                <h2>Login</h2>
+                <form id="loginForm" action="/login" method="POST" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </section>
+
+            <nav>
+                <ul>
+                    <li><a href="#patient-registration">Patient Registration</a></li>
+                    <li><a href="#doctor-management">Doctor Management</a></li>
+                    <li><a href="#appointment-scheduling">Appointment Scheduling</a></li>
+                </ul>
+            </nav>
+
+            <section id="patient-registration" class="form-section">
+                <h2>Patient Registration</h2>
+                <form action="/register-patient" method="POST">
+                    <div class="form-group">
+                        <label for="patient-name">Name:</label>
+                        <input type="text" id="patient-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patient-age">Age:</label>
+                        <input type="number" id="patient-age" name="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patient-gender">Gender:</label>
+                        <select id="patient-gender" name="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="patient-address">Address:</label>
+                        <input type="text" id="patient-address" name="address" required>
+                    </div>
+                    <button type="submit">Register</button>
+                </form>
+            </section>
+
+            <section id="doctor-management" class="form-section">
+                <h2>Doctor Management</h2>
+                <form action="/add-doctor" method="POST">
+                    <div class="form-group">
+                        <label for="doctor-name">Name:</label>
+                        <input type="text" id="doctor-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctor-specialization">Specialization:</label>
+                        <input type="text" id="doctor-specialization" name="specialization" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctor-contact">Contact:</label>
+                        <input type="text" id="doctor-contact" name="contact" required>
+                    </div>
+                    <button type="submit">Add Doctor</button>
+                </form>
+            </section>
+
+            <section id="appointment-scheduling" class="form-section">
+                <h2>Appointment Scheduling</h2>
+                <form action="/schedule-appointment" method="POST">
+                    <div class="form-group">
+                        <label for="appointment-patient">Patient:</label>
+                        <input type="text" id="appointment-patient" name="patient" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointment-doctor">Doctor:</label>
+                        <input type="text" id="appointment-doctor" name="doctor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointment-date">Date:</label>
+                        <input type="date" id="appointment-date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointment-time">Time:</label>
+                        <input type="time" id="appointment-time" name="time" required>
+                    </div>
+                    <button type="submit">Schedule Appointment</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hospital Management System</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
